@@ -1,0 +1,273 @@
+/* TO GET AN IDEA OF THE CSS YOU WILL LIKELY BE USING, SEE THE LISTS BELOW. */
+
+        /* 
+        
+        Spacing 
+
+            - padding (shorthand and/or specific properties like padding-bottom, etc.)
+
+            - margin, (shorthand and/or specific properties like margin-top, etc.)
+
+            - letter-spacing, word-spacing, line-height
+
+            - width, max-width, min-width
+            - height, max-height, min-height
+
+        Typography 
+
+            - font-family, font-size, font-style, font-weight
+
+            - text-decoration, text-align
+
+            - color
+
+            - text-shadow, text-transform
+
+        Box, Layout and Border 
+
+            - border (shorthand and/or specific properties like border-top, border-bottom-radius, border-width, etc.)
+
+            - box-shadow
+
+            - display, float, align-items, align-content
+
+            - grid-template-columns, grid-column-gap
+
+            - transform
+
+        Other
+
+            - :nth()-child (to target specific child elements)
+
+            - :focus, :hover, :active (to target link states)
+
+            - @font-face or @import (to import typefaces)
+
+        */
+
+
+/* ------ START WRITING YOUR CODE BELOW ------ */
+
+/* IMPROTED FONTS */
+
+@font-face {
+    font-family: "ultra";
+    src: url('../fonts/serif/ultra-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "roboto";
+    src: url('../fonts/sans-serif/roboto-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "lato";
+    src: url('../fonts/sans-serif/lato-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "rozha";
+    src: url('../fonts/serif/rozhaone-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "josefin";
+    src: url('../fonts/serif/josefinslab-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* TYPOGRAPHY */
+
+p {
+    font-family: roboto, Arial, sans-serif;
+    color: #262118;
+}
+
+h1 h2 h3 h4 {
+    font-family: lato, Helvetica, sans-serif;
+    letter-spacing: 0.0325rem;
+    color: #0D0D0D;
+}
+
+h1 {
+    font-size: 3rem;
+    letter-spacing: 0.25rem;
+    transform: rotate(-5deg);
+}
+
+.highlight {
+    display: inline-block;
+    font-family: ultra, Georgia, serif;
+    font-weight: lighter;
+    padding: 1rem 2rem;
+    border-radius: 0.3rem;
+    border-top-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    color: white;
+    background-color: #354010;
+    box-shadow: 5px 5px 4px -1px #888;
+}
+
+
+
+/* GENERAL SET UP AND DEFAULTS */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size:16px;
+}
+
+body {
+    margin: 1.5rem auto;
+    width:90%;
+    min-width:56.25rem;
+}
+
+/* LAYOUT */
+
+header {
+    padding: 0.5rem 0rem 1rem 0rem;
+}
+
+nav {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.main-section {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-gap: 1rem;
+}
+
+article {
+    grid-column: 1 / 2;
+    grid-row: 1;
+    padding-right: 2rem;
+}
+
+aside {
+    grid-column: 2 / 3;
+    grid-row: 1;
+    border-left: 1px solid #354010;
+    padding-left: 2rem;
+    
+}
+
+aside p {
+    border-bottom: 1px solid #354010;
+    padding-bottom: 2rem;
+}
+
+aside a {
+    display: inline-block;
+    font-size: .5rem;
+    padding-top: 1rem;
+}
+
+.subsection {
+    display: flex;
+
+}
+
+/* IMAGES AND FIGURES */
+
+img {
+    width: 100%;
+}
+
+figure {
+    margin: 0px;
+}
+
+.article-image {
+    width: 33%;
+    float: left;
+    margin-right: 0.75rem;
+}
+
+.subsection {
+    margin: 1rem 0rem;
+}
+
+.subsection figure{
+margin: 0rem 0.25rem;
+background-color: #E4EDF2;
+}
+
+.subsection figure figcaption {
+    padding: 0.5rem 0.5rem;
+}
+
+/* LINKS AND NAVIATION */
+
+a {
+    text-decoration: none;
+    color: #425911;
+}
+footer a:visited {
+    color: #997669;
+}
+
+a:focus, a:hover {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #732002;
+}
+
+nav a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 1.5rem 2rem;
+    font-size: 1.5rem;
+    font-family: lato, Arial, sans-serif;
+    color: #732002;
+}
+
+nav a:focus, nav a:hover {
+    color: #fff;
+    background-color: #8C3D0F;
+}
+
+nav a:active {
+    color: #fff;
+    background-color: #010D00;
+}
+
+nav {
+    border-top: 1px solid #354010;
+    border-bottom: 1px solid #354010;
+}
+
+button {
+    display: inline-block;
+    font-family: ultra, Georgia, serif;
+    font-weight: lighter;
+    font-size: 1.25rem;
+    padding: 1.25rem 2rem;
+    border-radius: .75rem;
+    color: white;
+    background-color: #354010;
+    box-shadow: 5px 5px 4px -1px #888;
+}
+
+/* FOOTER */
+footer .copyright {
+    text-align: left;
+    padding: .25rem;
+}
+
+footer p {
+    text-align: right;
+}
